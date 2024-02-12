@@ -26,3 +26,8 @@ function btnClicked() {
     tailsEl.innerHTML = numTails;
   }
 }
+
+function flipCoin() {
+  let coin = flipCoin();
+  console.log(`You flipped ${coin}.`);
+}
