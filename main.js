@@ -1,33 +1,33 @@
 // COIN FLIP SIMULATOR
 
-// HTML Variables
-let outputE1 = document.getElementById("output");
-let headsEl = document.getElementById("heads-out");
-let tailsEl = document.getElementById("tails-out");
-// Count Variables
-let numHeads = 0;
-let numTails = 0;
-// Button Event Listener
-document.getElementById("btn").addEventListener("click", btnClicked);
+// HTML ELement Variables
+let outputEl = document.getElementById("output");
 
-function btnClicked() {
-  // Generate a Random Number
-  let randNum = Math.random();
-  console.log(randNum);
+// Btn Click Event
+document.getElementById("btn").addEventListener("click", btnHandler);
 
-  // Simulate the Coin Flip
-  if (randNum < 0.5) {
-    outputE1.innerHTML = "<img src='img/heads.png' />";
-    numHeads++;
-    headsEl.innerHTML = numHeads;
-  } else {
-    outputE1.innerHTML = "<img src='img/tails.png' />";
-    numTails++;
-    tailsEl.innerHTML = numTails;
-  }
+function btnHandler() {
+  // First Coin Flip
+  let coin1 = flipCoin();
+
+  // Second Coin Flip
+  let coin2 = flipCoin();
+
+  // Third Coin Flip
+  let coin3 = flipCoin();
+
+  // Output Results
+  let pEl = document.createElement("p");
+  pEl.innerHTML = `<img src="img/${coin1}.png"> <img src="img/${coin2}.png"> <img src="img/${coin3}.png">`;
+  outputEl.appendChild(pEl);
 }
 
 function flipCoin() {
-  let coin = flipCoin();
-  console.log(`You flipped ${coin}.`);
+  if (Math.random() < 0.5) {
+    coin = "heads";
+  } else {
+    coin = "tails";
+  }
+
+  return coin;
 }
