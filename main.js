@@ -16,7 +16,7 @@ function btnHandler() {
   // Third Coin Flip
   let coin3 = flipCoin();
 
-  // Output Results
+  // OUTPUT
   let pEl = document.createElement("p");
   pEl.innerHTML = `<img src="img/${coin1}.png"> <img src="img/${coin2}.png"> <img src="img/${coin3}.png">`;
   outputEl.appendChild(pEl);
